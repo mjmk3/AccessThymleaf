@@ -14,8 +14,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class UserController {
 
-    @GetMapping("/signup")
+    @GetMapping("/signUp")
     public String SignUp(){
         return "Sign Up Route";
+    }
+
+    @GetMapping("/signIn")
+    public String SignIn(){
+        return "Sign In Route";
     }
 }
