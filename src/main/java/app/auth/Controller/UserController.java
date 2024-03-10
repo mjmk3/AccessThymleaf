@@ -1,6 +1,7 @@
 package app.auth.Controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * @author MJ Makki
@@ -12,4 +13,9 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class UserController {
+
+    @GetMapping("/signup")
+    public String SignUp(){
+        return "Sign Up Route";
+    }
 }
