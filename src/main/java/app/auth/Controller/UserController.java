@@ -43,4 +43,16 @@ public class UserController {
         User signedUp = userService.SignUp(user.getPhone(), user.getPassword());
         return signedUp == null ? "error" : "redirect/signIn";
     }
+
+    @PostMapping("/signIn")
+    public String SignIn(@ModelAttribute User user, Model model){
+        System.out.println("SignIn Request" + user);
+        User signedIn = userService.SignIn(user.getPhone(), user.getPassword());
+        if(signedIn != null){
+            model.addAttribute("Sign In", signedIn.getPhone());
+            return "personal";
+        } else {
+            return "error";
+        }
+    }
 }

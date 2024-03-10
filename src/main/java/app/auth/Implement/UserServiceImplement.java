@@ -34,6 +34,10 @@ public class UserServiceImplement implements UserService {
         if(phone == null || password == null){
             return null;
         } else {
+            if (userRepo.findFirstBySignIn(phone).isPresent()){
+                System.out.println("Duplicate Sign In with same Credentials");
+                return null;
+            }
             User user = new User();
             user.setPhone(phone);
             user.setPassword(passwordEncoder.encode(password));
