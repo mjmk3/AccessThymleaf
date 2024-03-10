@@ -14,4 +14,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface UserService {
     User SignUp(String phone, String password);
+
+    User SignIn(String phone, String password);
 }

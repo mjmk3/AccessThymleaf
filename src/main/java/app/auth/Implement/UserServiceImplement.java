@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserServiceImplement implements UserService {
 
     private final UserRepo userRepo;
-    private BCryptPasswordEncoder passwordEncoder;
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
     public UserServiceImplement(UserRepo userRepo, BCryptPasswordEncoder passwordEncoder) {
@@ -39,5 +39,10 @@ public class UserServiceImplement implements UserService {
             user.setPassword(passwordEncoder.encode(password));
             return userRepo.save(user);
         }
+    }
+
+    @Override
+    public User SignIn(String phone, String password){
+        return userRepo.findByPhoneAndPassword(phone, password).orElse(null);
     }
 }
