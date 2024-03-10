@@ -16,11 +16,11 @@ public class UserController {
 
     @GetMapping("/signUp")
     public String SignUp(){
-        return "Sign Up Route";
+        return "Sign_Up";
     }
 
     @GetMapping("/signIn")
     public String SignIn(){
-        return "Sign In Route";
+        return "Sign_In";
     }
 }
