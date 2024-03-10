@@ -1,7 +1,7 @@
-Simple Access 
+Simple Access Application
 
 
-Application Using 
+Using 
 
 
 Spring MVC
